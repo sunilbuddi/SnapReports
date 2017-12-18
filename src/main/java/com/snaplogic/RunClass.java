@@ -31,7 +31,11 @@ public class RunClass {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd_MM_yyyy_HH_mm_ss");
         Date date = new Date();
         outputFilePath = "SnaplexAndInsights.xlsx";
-        new Thread() {
+        new SnaplexStatistics().makeLogin(username, password,outputFilePath, baseURL);
+        new Insights().makeLogin(username, password, outputFilePath, baseURL);
+        new Insights().getSnapCount(username, password, outputFilePath, baseURL);
+        new SnapPackList().makeLogin(username, password, outputFilePath, baseURL);
+       /* new Thread() {
             public void run() {
                 try {
                     new SnaplexStatistics().makeLogin(username, password,outputFilePath, baseURL);
@@ -66,6 +70,6 @@ public class RunClass {
                     e.printStackTrace();
                 }
             }
-        }.start();
+        }.start();*/
     }
 }
