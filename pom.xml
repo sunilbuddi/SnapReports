@@ -15,14 +15,6 @@
                         <goals>
                             <goal>java</goal>
                         </goals>
-                        <configuration>
-                            <mainClass>com.snaplogic.RunClass</mainClass>
-                            <arguments>
-                                <argument>${env.USER}</argument>
-                                <argument>${env.PASSWORD}</argument>
-                                <argument>${env.URL}</argument>
-                            </arguments>
-                        </configuration>
                     </execution>
                 </executions>
             </plugin>
