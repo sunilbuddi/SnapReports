@@ -1,10 +1,11 @@
 package com.snaplogic;
 
 
-import org.testng.annotations.*;
+
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import org.testng.annotations.Test;
 
 /**
  * Created by gaian on 7/4/16.
@@ -16,8 +17,8 @@ public class RunClass {
     static String outputFilePath = null;
     static String baseURL = null;
 
-    @org.testng.annotations.Test()
-    public void runReport() throws Exception {
+    //@Test()
+    public static void main(String args[]) throws Exception {
       /* username = args[0];
         password = args[1];
         //outputFilePath = args[2];
@@ -31,11 +32,11 @@ public class RunClass {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd_MM_yyyy_HH_mm_ss");
         Date date = new Date();
         outputFilePath = "SnaplexAndInsights.xlsx";
-        new SnaplexStatistics().makeLogin(username, password,outputFilePath, baseURL);
+        /*new SnaplexStatistics().makeLogin(username, password,outputFilePath, baseURL);
         new Insights().makeLogin(username, password, outputFilePath, baseURL);
         new Insights().getSnapCount(username, password, outputFilePath, baseURL);
-        new SnapPackList().makeLogin(username, password, outputFilePath, baseURL);
-       /* new Thread() {
+        new SnapPackList().makeLogin(username, password, outputFilePath, baseURL);*/
+        new Thread() {
             public void run() {
                 try {
                     new SnaplexStatistics().makeLogin(username, password,outputFilePath, baseURL);
@@ -70,6 +71,6 @@ public class RunClass {
                     e.printStackTrace();
                 }
             }
-        }.start();*/
+        }.start();
     }
 }
