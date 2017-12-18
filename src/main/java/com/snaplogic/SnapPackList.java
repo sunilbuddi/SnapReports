@@ -83,9 +83,10 @@ public class SnapPackList {
                     token = "SLToken " + token;
                     authHeader = new Header("Authorization", token);
                 }
-                res = restAssured.given().header(authHeader).header(accept).header(acceptLanguage).header(acceptEncoding)
-                        .get("api/1/rest/admin/snappack/list/" + orgSnode);
-                if(res.getStatusCode() != 200 || res.getStatusCode() != 201){
+                try {
+                    res = restAssured.given().header(authHeader).header(accept).header(acceptLanguage).header(acceptEncoding)
+                            .get("api/1/rest/admin/snappack/list/" + orgSnode);
+                }catch(Exception e){
                     Response login = restAssured.given().header("Authorization", "Basic " + authStringEnc)
                             .get("/api/1/rest/asset/session?caller=" + username);
                     String loginJson = login.asString();
@@ -103,9 +104,10 @@ public class SnapPackList {
                 if(res.statusCode() == 200){
                     System.out.println("Fetching snappacks of org  "+org);
                     JSONArray responseMap = JsonPath.read(resString, "$.response_map.packs");
-                    res = restAssured.given().header(authHeader).header(accept).header(acceptLanguage).header(acceptEncoding)
-                            .get("api/2/"+orgSnode+"/rest/snap_stats");
-                    if(res.getStatusCode() != 200 || res.getStatusCode() != 201){
+                    try {
+                        res = restAssured.given().header(authHeader).header(accept).header(acceptLanguage).header(acceptEncoding)
+                                .get("api/2/" + orgSnode + "/rest/snap_stats");
+                    }catch (Exception e){
                         Response login = restAssured.given().header("Authorization", "Basic " + authStringEnc)
                                 .get("/api/1/rest/asset/session?caller=" + username);
                         String loginJson = login.asString();
