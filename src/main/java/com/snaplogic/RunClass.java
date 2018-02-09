@@ -23,8 +23,8 @@ public class RunClass {
         password = args[1];
         //outputFilePath = args[2];
         baseURL = args[2];*/
-        username = "msangar@snaplogic.com";
-        password = "Sn@p2015!!!";
+        username = "matt@snaplgic.com";
+        password = "Sn@p2015!!!!";
         //outputFilePath = "/home/gaian/Desktop/";
         baseURL = "https://elastic.snaplogic.com";
 
