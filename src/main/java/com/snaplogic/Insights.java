@@ -20,7 +20,7 @@ import java.util.*;
  */
 public class Insights {
 
-    final static Logger logger = Logger.getLogger(Insights.class);
+   // final static Logger logger = Logger.getLogger(Insights.class);
 
     public void makeLogin(String username, String password, String outputFilePath, String baseURL) throws Exception {
         String token;
@@ -30,9 +30,9 @@ public class Insights {
         Date date = new Date();
         Calendar c = Calendar.getInstance();
         c.setTime(date);
-        c.add(Calendar.DATE, -7);
+        c.add(Calendar.DATE, -1095);
         Date start = c.getTime();
-        c.add(Calendar.DATE, 7);
+        c.add(Calendar.DATE, 1095);
         Date end = c.getTime();
 
         String authString = username + ":" + password;
@@ -119,9 +119,9 @@ public class Insights {
         Calendar c = Calendar.getInstance();
         c.setTime(date);
         int i = c.get(Calendar.DAY_OF_WEEK) - c.getFirstDayOfWeek();
-        c.add(Calendar.DATE, -7);
+        c.add(Calendar.DATE, -1095);
         Date start = c.getTime();
-        c.add(Calendar.DATE, 7);
+        c.add(Calendar.DATE, 1095);
         Date end = c.getTime();
 
         String authString = username + ":" + password;
