@@ -45,7 +45,7 @@ public class RunClass {
                 }
             }
             }.start();
-        new Thread() {
+      /*  new Thread() {
             public void run() {
                 try {
                         new Insights().makeLogin(username, password, outputFilePath, baseURL);
@@ -62,7 +62,7 @@ public class RunClass {
                     e.printStackTrace();
                 }
             }
-        }.start();
+        }.start(); */
         new Thread() {
             public void run() {
                 try {
