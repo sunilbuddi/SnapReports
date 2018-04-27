@@ -27,6 +27,8 @@ public class RunClass {
         password = "Sn@p2015!!!!";
         //outputFilePath = "/home/gaian/Desktop/";
         baseURL = "https://elastic.snaplogic.com";
+        long startTime = args[0];
+        long endTime = args[1];
 
 
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd_MM_yyyy_HH_mm_ss");
@@ -57,7 +59,7 @@ public class RunClass {
         new Thread() {
             public void run() {
                 try {
-                    new Insights().getSnapCount(username, password, outputFilePath, baseURL);
+                    new Insights().getSnapCount(username, password, outputFilePath, baseURL, startTime, endTime);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
