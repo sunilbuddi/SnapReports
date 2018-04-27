@@ -110,7 +110,7 @@ public class Insights {
         storeDataIntoExcelFile(orgLevelData, outputFilePath, outputSheetName);
     }
 
-    public void getSnapCount(String username, String password, String outputFilePath, String baseURL) throws Exception {
+    public void getSnapCount(String username, String password, String outputFilePath, String baseURL, long startTime, long endTime) throws Exception {
         String token;
         RestAssured restAssured = new RestAssured();
         restAssured.baseURI = baseURL;
@@ -174,7 +174,7 @@ public class Insights {
                     authHeader = new Header("Authorization", token);
                 }
                 res = restAssured.given().header(authHeader).header(accept).header(acceptLanguage).header(acceptEncoding)
-                        .get("api/2/"+orgSnode+"/rest/insights/snap?start_ts="+start.getTime()+"&end_ts="+end.getTime());
+                        .get("api/2/"+orgSnode+"/rest/insights/snap?start_ts="+startTime+"&end_ts="+endTime);
                 String resString = res.asString();
                 if(res.statusCode() == 200){
                     System.out.println("Fetching snap insights of org  "+org);
