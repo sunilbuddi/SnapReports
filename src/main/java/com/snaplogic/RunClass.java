@@ -53,7 +53,7 @@ public class RunClass {
                     e.printStackTrace();
                 }
             }
-        }.start();
+        }.start(); */
         new Thread() {
             public void run() {
                 try {
@@ -62,8 +62,8 @@ public class RunClass {
                     e.printStackTrace();
                 }
             }
-        }.start(); */
-        new Thread() {
+        }.start(); 
+       /* new Thread() {
             public void run() {
                 try {
                     new SnapPackList().makeLogin(username, password, outputFilePath, baseURL);
@@ -71,6 +71,6 @@ public class RunClass {
                     e.printStackTrace();
                 }
             }
-        }.start();
+        }.start(); */
     }
 }
