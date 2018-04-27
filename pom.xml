@@ -17,6 +17,16 @@
                         </goals>
                         <configuration>
                             <mainClass>com.snaplogic.RunClass</mainClass>
+                                  <systemProperties>
+            <property>
+                <name>startTime</name>
+                <value>${startTime}</value>
+            </property>
+                                           <property>
+                <name>endTime</name>
+                <value>${endTime}</value>
+            </property>
+        </systemProperties>
                         </configuration>
                     </execution>
                 </executions>
