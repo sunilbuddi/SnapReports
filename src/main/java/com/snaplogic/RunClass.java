@@ -27,8 +27,8 @@ public class RunClass {
         password = "Sn@p2015!!!!";
         //outputFilePath = "/home/gaian/Desktop/";
         baseURL = "https://elastic.snaplogic.com";
-        long startTime = args[0];
-        long endTime = args[1];
+        long startTime = System.getProperty("startTime");
+        long endTime = System.getProperty("endTime");
 
 
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd_MM_yyyy_HH_mm_ss");
